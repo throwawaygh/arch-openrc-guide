@@ -125,7 +125,7 @@ Install acpid-openrc from openrc-misc, and run
 
 Ah, network configuration, the most fun part of setting up any init system. If
 you use DHCP, then you should enable the dhcpcd service, which is available in
-openrc-base. There are also services for NetworkManager and wicd if you'd rather
+openrc-base. There are also services for NetworkManager and wicd if you want to
 use either of those.
 
 To set up static routing, you need to edit the /etc/conf.d/net file. The file is
@@ -278,6 +278,15 @@ interfaces, do:
 
 At this point, you have a fast, OpenRC-based, systemd-free init.
 Congratulations! Here are a few more things you can do from here.
+
+
+### Fixing Common Boot Errors
+
+You may have some weird boot errors about missing configuration files for sysctl
+or tmpfiles.d. These are annoying because they slow down the boot process
+substantially. You can fix these errors by running:
+
+    # sudo touch /etc/sysctl.conf /usr/lib/tmpfiles.d/tmp.conf /usr/lib/tmpfiles.d/var.conf
 
 
 ### Enable Parallel Init
