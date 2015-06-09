@@ -130,11 +130,6 @@ you use DHCP, then you should enable the dhcpcd service, which is available in
 openrc-base. There are also services for NetworkManager and wicd if you want to
 use either of those.
 
-If you use NetworkManager, you'll need to build and install <a
-href="https://aur.archlinux.org/packages/networkmanager-consolekit/">networkmanager-consolekit</a>
-from the AUR. You can use yaourt for this. You'll also need consolekit, so look
-at the section "Installing consolekit" below.
-
 To set up static routing, you need to edit the /etc/conf.d/net file. The file is
 well-documented and should tell you everything you need to know. After editing
 this file, to enable your interface, you need to make a symlink to
@@ -146,6 +141,22 @@ interface named eno1, you would do:
 
 There is also a service for wpa-supplicant if you want to automatically connect
 to a wireless network, but I recommend using NetworkManager or wicd instead.
+
+
+### NetworkManager
+
+If you use NetworkManager, you'll need to build and install <a
+href="https://aur.archlinux.org/packages/networkmanager-consolekit/">networkmanager-consolekit</a>
+from the AUR. You can use yaourt for this. You'll also need consolekit, so look
+at the section "Installing consolekit" below.
+
+When you install the networkmanager-openrc package, it will complain that there
+is no service named "networkmanager". This is quite alright. Just run
+
+    # rc-update add NetworkManager default
+
+to enable the service.
+
 
 ### Hostname Configuration
 
