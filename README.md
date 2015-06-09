@@ -10,7 +10,9 @@ doing it in what I have found to be the most reliable way.
 
 You need to install a bunch of AUR packages to get OpenRC working on Arch. For
 various reasons, many of them can't be installed with yaourt. I'll note when a
-package can be installed with yaourt.
+package can be installed with yaourt. I recommend using yaourt whenever
+possible, as its automatic dependency handling is really convenient. If you're
+unfamiliar with yaourt, look at <https://wiki.archlinux.org/index.php/Yaourt>.
 
 For the sake of completeness, instructions to install a package from the AUR can
 be found here:
@@ -128,6 +130,11 @@ you use DHCP, then you should enable the dhcpcd service, which is available in
 openrc-base. There are also services for NetworkManager and wicd if you want to
 use either of those.
 
+If you use NetworkManager, you'll need to build and install <a
+href="https://aur.archlinux.org/packages/networkmanager-consolekit/">networkmanager-consolekit</a>
+from the AUR. You can use yaourt for this. You'll also need consolekit, so look
+at the section "Installing consolekit" below.
+
 To set up static routing, you need to edit the /etc/conf.d/net file. The file is
 well-documented and should tell you everything you need to know. After editing
 this file, to enable your interface, you need to make a symlink to
@@ -185,6 +192,21 @@ In order to access DRI devices, a user needs to be a member of the video group.
 Add your user like this:
 
     # usermod <user> -aG video
+
+
+### Installing consolekit
+
+consolekit is a very important piece of software that was replaced by logind.
+However, now that we've nixed systemd, we want consolekit back. Install it with
+the <a href="https://aur.archlinux.org/packages/consolekit/">consolekit</a>
+package from the AUR.
+
+While you're at it, I also recommend installing <a
+href="https://aur.archlinux.org/packages/polkit-consolekit">polkit-consolekit</a>.
+As well as installing and enabling the consolekit-openrc service from the
+openrc-desktop package base.
+
+Mercifully, this can all be done using yaourt.
 
 
 ### Desktop Environments and Display Managers
