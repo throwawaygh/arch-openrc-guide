@@ -108,6 +108,13 @@ package base. Enable it with
 
     # rc-update add cronie default
 
+#### dbus
+
+Everything these days needs dbus. Install the dbus-openrc package from
+openrc-base and enable it with
+
+    # rc-update add dbus default
+
 #### ALSA
 
 If you want sound, you should add the ALSA service. It is available in the
