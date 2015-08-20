@@ -1,3 +1,13 @@
+## This Guide is Unmaintained
+As of August 20th, 2015, the steps in this guide still work on up-to-date
+installations of Arch Linux. However, it isn't going to be updated any further.
+I'm leaving it up because some people may still find it to be a valuable
+resource, but you probably shouldn't rely entirely on the steps here.
+
+An easier, more comprehensive guide can be found here:
+<http://systemd-free.org/>.
+
+
 # How to Install OpenRC on Arch Linux
 
 Whether you appreciate the superior system administration capabilities of
